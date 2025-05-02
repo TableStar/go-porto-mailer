@@ -44,7 +44,7 @@ func CreateContactHandler(deps HandlerDependencies, recipientEmail string) gin.H
 
 			c.JSON(http.StatusInternalServerError, gin.H{
 				"status":  "error",
-				"message": "Failed due to internal Server error",
+				"message": "Failed due to internal server error",
 			})
 			return
 		}
