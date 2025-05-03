@@ -34,7 +34,7 @@ func CreateContactHandler(deps HandlerDependencies, recipientEmail string) gin.H
 			return
 		}
 
-		subject := fmt.Sprintf("Contact Form : %v %v", formData.FirstName, formData.LastName)
+		subject := fmt.Sprintf("Portfolio Website Contact Form : %v %v", formData.FirstName, formData.LastName)
 
 		body := fmt.Sprintf("Name: %v %v\nEmail: %v\nPhone: %v\nMessage:%v", formData.FirstName, formData.LastName, formData.Email, formData.Phone, formData.Message)
 
