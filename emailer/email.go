@@ -41,7 +41,7 @@ func (s *smtpSender) Send(to, subject, body string) error {
 	err := smtp.SendMail(addr, auth, s.from, []string{to}, msgBytes)
 
 	if err != nil {
-		return fmt.Errorf("smtp.SendMail is failed even if it should not be error but got error: %v", err)
+		return fmt.Errorf("smtp.SendMail is failed even if it should not be error but got error: %w", err)
 
 	}
 	return nil

@@ -57,6 +57,8 @@ func CreateContactHandler(deps HandlerDependencies, recipientEmail string) gin.H
 }
 
 func SetupRouter(deps HandlerDependencies, recipientEmail string) *gin.Engine {
+
+	gin.SetMode(gin.ReleaseMode)
 	router := gin.Default()
 
 	router.Use(cors.Default())
