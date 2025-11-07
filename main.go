@@ -4,6 +4,7 @@ import (
 	"log"
 	"os"
 
+	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 	"github.com/tablestar/porto-emailer/emailer"
 )
@@ -48,6 +49,13 @@ func main() {
 	}
 
 	router := emailer.SetupRouter(deps, recipientEmail)
+
+	router.GET("/", func(ctx *gin.Context) {
+		ctx.JSON(200, gin.H{"status": "ok"})
+	})
+	router.GET("/health", func(ctx *gin.Context) {
+		ctx.JSON(200, gin.H{"status": "ok"})
+	})
 
 	serverAddress := ":" + serverPort
 	log.Printf("Starting http server on port %v", serverAddress)
